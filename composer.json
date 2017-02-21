@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "m1nified\\arraier\\": "Classes"
+            "m1nified\\arraier\\": "Classes/"
         }
     }
 }
