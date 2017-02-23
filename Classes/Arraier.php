@@ -18,6 +18,24 @@ class Arraier{
     }
     return true;
   }
+  public function not_contains(){
+    $names = func_get_args();
+    foreach($names as $name){
+      if(
+        array_key_exists($name,$this->array)
+        && (
+          ( is_string( $this->array[$name] ) && $this->array[$name] !== '' )
+          || !is_string( $this->array[$name] ) && (
+            is_scalar($this->array[$name])
+            || is_array($this->array[$name])
+          )
+        ) 
+      ){
+        return false;
+      }
+    }
+    return true;
+  }
   public function xmlize(){
     $tree = array();
     foreach ($this->array as $key => $value) {
